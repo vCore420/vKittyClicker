@@ -1,5 +1,3 @@
-/* Please ignore my lazy css, works well but i would love to see this cleaned up! */
-
 body::-webkit-scrollbar,
 html::-webkit-scrollbar {
     display: none;
@@ -72,11 +70,11 @@ body {
     width: 256px;
     height: 256px;
     flex-shrink: 0;
+    touch-action: manipulation;
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: 3072px 256px;
     cursor: pointer;
-    touch-action: manipulation;
     display: block;
     transition: transform 0.12s cubic-bezier(.42,0,.58,1);
     z-index: 2;
@@ -286,4 +284,103 @@ body {
     transform: translateY(0);
     transition: transform 1.3s cubic-bezier(.42,0,.58,1), opacity 1.3s;
     text-shadow: 0 4px 8px #0006;
+}
+
+
+@media (max-width: 600px) {
+  html, body {
+    padding: 0;
+    font-size: 20px; 
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .header {
+    font-size: 2em;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .paragraph {
+    font-size: 1.1em;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .cat-name-text,
+  .cat-name-edit {
+    font-size: 1.2em;
+    padding: 6px 8px;
+    margin-top: 8px;
+  }
+  .main-cat {
+    width: 60vw;
+    height: 60vw;
+    max-width: 320px;
+    max-height: 320px;
+    min-width: 180px;
+    min-height: 180px;
+    margin: 0 auto 12px auto;
+  }
+  .counter {
+    font-size: 1.3em;
+    margin-top: 16px;
+  }
+  .bps-counter {
+    font-size: 1em;
+    margin-bottom: 12px;
+  }
+  .upgrade-section,
+  .upgrade-list {
+    max-width: 98vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .upgrade-row {
+    padding: 6px;
+    margin-bottom: 8px;
+    font-size: 1em;
+  }
+  .upgrade-btn {
+    font-size: 1em;
+    padding: 8px 8px;
+    width: 65%;
+    margin-right: 8px;
+  }
+  .upgrade-counter {
+    font-size: 1.1em;
+    padding: 8px 8px;
+    min-width: 24px;
+    margin-right: 4px;
+  }
+  .upgrade-list-icon,
+  .upgrade-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  .floating-icons {
+    width: 44px;
+    top: 0;
+    bottom: 0;
+  }
+  .floating-icons.left {
+    left: 2px;
+  }
+  .floating-icons.right {
+    right: 2px;
+  }
+  .danger-reset-btn {
+    font-size: 1em;
+    padding: 6px;
+    margin: 32px auto 32px auto;
+    max-width: 94vw;
+  }
+  .lucky-fish-timer {
+    font-size: 1em;
+    padding: 8px 20px;
+    top: 8px;
+  }
+  .click-popup {
+    font-size: 1.1em;
+  }
 }
