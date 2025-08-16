@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitty Clicker</title>
+    <link type="text/css" href="assets/styles/styles.css" rel="stylesheet" />
+
+</head>
+<body>
+    
+  <div id="autoUpgradeIcons" class="floating-icons left"></div>
+  <div id="clickUpgradeIcons" class="floating-icons right"></div>
+
+  <h1 class="header">Kitty Clicker</h1>
+  <p class="paragraph">Click The Kitty To Help Make Biscuits</p>
+
+  <h2 id="catName" class="cat-name-text">Name your cat...</h2>
+   
+  <div class="main-cat"></div>
+
+  <div class="counter">Biscuits: <span id="biscuitCount">0</span></div>
+  <div class="bps-counter">Biscuits per second: <span id="bpsCount">1</span></div>
+    
+    <div class="upgrade-section">
+      <button class="collapse-btn" data-target="autoUpgrades">BPS Upgrades ▼</button>
+      <div class="upgrade-list collapsed" id="autoUpgrades"></div>
+    </div>
+    <div class="upgrade-section">
+      <button class="collapse-btn" data-target="clickUpgrades">Clicker Upgrades ▼</button>
+      <div class="upgrade-list collapsed" id="clickUpgrades"></div>
+    </div>
+    <div class="upgrade-section">
+      <button class="collapse-btn" data-target="buffUpgrades">Buff Upgrades ▼</button>
+      <div class="upgrade-list collapsed" id="buffUpgrades"></div>
+    </div>
+  
+    <button id="resetSaveBtn" class="danger-reset-btn">Danger! Reset Game</button>
+    
+    <div class="bottom-spacer"></div>
+    
+    <script src="assets/main/scripts.js"></script>
+</body>
+</html>
