@@ -1,6 +1,7 @@
 <div align="center">
   <h1 align="center">Kitty Clicker</h1>
   <p align="center">Another basic Clicker game, written during a power cut!</p>
+  <p align="center">Try Kitty Clicker: [Play on GitHub Pages](https://vcore420.github.io/vKittyClicker/)</p>
   <p align="center">
     <img alt="Github License" src="https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge">
     <img alt="Github commit activity" src="https://img.shields.io/github/commit-activity/m/vCore420/vKittyClicker?style=for-the-badge">
