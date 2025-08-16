@@ -88,6 +88,9 @@ Enjoy!
 
 Heavily Inspired by the original and best clicker game Cookie Clicker! all rights to their original game belong to them, this project was just something fun I wanted to make!
 
+All assets designed, created, and refined with Pixellab and Piskel. All assets are royalty-free and can be used outside this project by anyone.  
+However, they may not be sold or used in any way to generate revenue.
+
 **⚠️ This project is in early development. All game assets are test/beta and subject to change.**
 
 ## Contributors 
