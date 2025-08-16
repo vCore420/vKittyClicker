@@ -290,65 +290,65 @@ body {
 @media (max-width: 600px) {
   html, body {
     padding: 0;
-    font-size: 20px; 
+    font-size: 32px; 
     min-height: 100vh;
     overflow-x: hidden;
   }
 
   .header {
-    font-size: 2em;
+    font-size: 2.8em;
     margin-top: 32px;
     margin-bottom: 12px;
     text-align: center;
   }
   .paragraph {
-    font-size: 1.1em;
+    font-size: 1.6em;
     margin-bottom: 16px;
     text-align: center;
   }
   .cat-name-text,
   .cat-name-edit {
-    font-size: 1.2em;
+    font-size: 1.5em;
     padding: 6px 8px;
     margin-top: 8px;
   }
   .main-cat {
-    width: 60vw;
-    height: 60vw;
-    max-width: 320px;
-    max-height: 320px;
-    min-width: 180px;
-    min-height: 180px;
-    margin: 0 auto 12px auto;
+    width: 120vw;
+    height: 120vw;
+    max-width: 480px;
+    max-height: 480px;
+    min-width: 260px;
+    min-height: 260px;
+    margin: 0 auto 16px auto;
   }
   .counter {
-    font-size: 1.3em;
+    font-size: 2.2em;
     margin-top: 16px;
   }
   .bps-counter {
-    font-size: 1em;
+    font-size: 1.8em;
     margin-bottom: 12px;
   }
   .upgrade-section,
   .upgrade-list {
-    max-width: 98vw;
+    max-width: 96vw;
     padding-left: 2vw;
     padding-right: 2vw;
   }
   .upgrade-row {
     padding: 6px;
     margin-bottom: 8px;
-    font-size: 1em;
+    font-size: 1.6em;
   }
   .upgrade-btn {
-    font-size: 1em;
+    font-size: 1.6em;
     padding: 8px 8px;
-    width: 65%;
+    width: 70%;
     margin-right: 8px;
   }
   .upgrade-counter {
-    font-size: 1.1em;
-    padding: 8px 8px;
+    font-size: 1.6em;
+    padding: 8px 12px;
     min-width: 24px;
     margin-right: 4px;
   }
@@ -359,28 +359,28 @@ body {
     margin-right: 8px;
   }
   .floating-icons {
-    width: 44px;
+    width: 40px;
     top: 0;
     bottom: 0;
   }
   .floating-icons.left {
-    left: 2px;
+    left: 0px;
   }
   .floating-icons.right {
-    right: 2px;
+    right: 0px;
   }
   .danger-reset-btn {
-    font-size: 1em;
-    padding: 6px;
-    margin: 32px auto 32px auto;
-    max-width: 94vw;
+    font-size: 1.4em;
+    padding: 8px;
+    margin: 24px auto 24px auto;
+    max-width: 96vw;
   }
   .lucky-fish-timer {
-    font-size: 1em;
+    font-size: 1.4em;
     padding: 8px 20px;
     top: 8px;
   }
   .click-popup {
-    font-size: 1.1em;
+    font-size: 1.4em;
   }
 }
