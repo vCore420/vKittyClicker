@@ -415,6 +415,7 @@ function buyBuffUpgrade(upg) {
         } else if (upg.type === "auto" && typeof upg.target === "number") {
             autoUpgrades[upg.target].bps *= upg.multiplier;
             autoClickMultiplier = autoUpgrades.reduce((sum, upg) => sum + (upg.bps * upg.bought), 0);
+            renderUpgradeList(autoUpgrades, "autoUpgrades", buyAutoUpgrade);
         } else if (upg.type === "fish") {
         }
         upg.cost = Math.floor(upg.baseCost * Math.pow(upg.costMultiplier, upg.bought));
@@ -538,8 +539,13 @@ function showUpgradeIcon(type, upgradeName) {
     const top = Math.floor(Math.random() * (bodyHeight - 32));
     icon.style.top = `${top}px`;
 
-    // Random horizontal wiggle (within the 200px width)
-    const left = Math.floor(Math.random() * 168); // 200px - 32px icon width
+    // Responsive horizontal wiggle
+    let containerWidth = container.offsetWidth || 32;
+    // For mobile, ensure containerWidth is 32px
+    if (window.innerWidth <= 600) {
+        containerWidth = 32;
+    }
+    const left = Math.floor(Math.random() * (containerWidth - 18)); // 18px icon width for mobile
     icon.style.left = `${left}px`;
 
     container.appendChild(icon);
