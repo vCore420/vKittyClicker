@@ -241,6 +241,11 @@ function updateBPS() {
 }
 
 
+function getCurrentBPS() {
+    return autoUpgrades.reduce((sum, upg) => sum + (upg.bps * upg.bought), 0);
+}
+
+
 // --- Cat Click Animation ---
 function growCat() {
     mainCat.style.transform = "scale(1.2)";
@@ -290,9 +295,15 @@ function renderUpgradeList(upgrades, containerId, buyHandler) {
                     <span class="upgrade-price">Unlocks at ${formatNumber(upg.unlockBPS)} BPS</span>`;
                 btn.disabled = true;
             } else {
-                statText = upg.type === "click"
-                    ? `Multiply Current Clicker Rate By <span class="upgrade-green">x${upg.multiplier}</span>`
-                    : `Multiply ${autoUpgrades[upg.target].name}'s BPS Rate by <span class="upgrade-green">x${upg.multiplier}</span>`;
+                if (upg.type === "click") {
+                    statText = `Multiply Current Clicker Rate By <span class="upgrade-green">x${upg.multiplier}</span>`;
+                } else if (upg.type === "auto" && typeof upg.target === "number") {
+                    statText = `Multiply ${autoUpgrades[upg.target].name}'s BPS Rate by <span class="upgrade-green">x${upg.multiplier}</span>`;
+                } else if (upg.type === "fish") {
+                    statText = `Increase Lucky Fish spawn rate by <span class="upgrade-green">${Math.round((1 - upg.multiplier) * 100)}%</span>`;
+                } else {
+                    statText = "";
+                }
                 btn.innerHTML = `
                     ${statText}<br>
                     <span class="upgrade-price">Cost: ${formatNumber(upg.cost)} Biscuits</span>
@@ -381,8 +392,9 @@ function buyClickUpgrade(upg) {
 // --- Update Buff Unlocks ---
 function updateBuffUnlocks() {
     let changed = false;
+    const currentBPS = getCurrentBPS();
     buffs.forEach(buff => {
-        if (!buff.unlocked && autoClickMultiplier >= buff.unlockBPS) {
+        if (!buff.unlocked && currentBPS >= buff.unlockBPS) {
             buff.unlocked = true;
             changed = true;
         }
