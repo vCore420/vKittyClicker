@@ -424,7 +424,6 @@ function buyBuffUpgrade(upg) {
         updateBuffUnlocks();
         renderUpgradeList(buffs, "buffUpgrades", buyBuffUpgrade);
         saveGameState();
-        showUpgradeIcon("buff", upg.name);
     }
 }
 
