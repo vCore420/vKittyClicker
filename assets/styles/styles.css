@@ -343,9 +343,20 @@ body {
   }
   .upgrade-section,
   .upgrade-list {
-    max-width: 96vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    max-width: 98vw;
+    width: 100%;
+    margin: 8px auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .collapse-btn {
+    width: 100%;
+    margin-bottom: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+    display: block;
+    text-align: left;
   }
   .upgrade-row {
     padding: 4px;
