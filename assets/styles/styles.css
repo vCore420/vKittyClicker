@@ -459,10 +459,6 @@ body {
     width: 18px;
     height: 18px;
     margin-right: 4px;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
   }
   .floating-icons {
     width: 60px !important; 
