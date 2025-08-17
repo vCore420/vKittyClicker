@@ -317,6 +317,10 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 
   body {
@@ -325,6 +329,10 @@ body {
     margin: 0;
     padding: 0 12px; 
     box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 
   .header {
@@ -333,12 +341,20 @@ body {
     margin-bottom: 8px;
     text-align: center;
     z-index: 4;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .paragraph {
     font-size: 1.4em;
     margin-bottom: 12px;
     text-align: center;
     z-index: 4;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .cat-name-text,
   .cat-name-edit {
@@ -364,12 +380,20 @@ body {
     margin-top: 10px;
     text-align: center;
     z-index: 4;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .bps-counter {
     font-size: 0.9em;
     margin-bottom: 12px;
     text-align: center;
     z-index: 4;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .upgrade-section,
   .upgrade-list {
@@ -379,6 +403,10 @@ body {
     padding: 0;
     box-sizing: border-box;
     z-index: 4;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .collapse-btn {
     width: 100%;
@@ -391,17 +419,29 @@ body {
     display: block;
     text-align: left;
     z-index: 4;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .upgrade-row {
     padding: 4px;
     margin-bottom: 6px;
     font-size: 1em;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .upgrade-btn {
     font-size: 1em;
     padding: 6px 6px;
     width: 80%;
     margin-right: 6px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .upgrade-counter {
     font-size: 1.2em;
@@ -409,21 +449,32 @@ body {
     padding: 6px 8px;
     min-width: 18px;
     margin-right: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .upgrade-list-icon,
   .upgrade-icon {
     width: 18px;
     height: 18px;
     margin-right: 4px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .floating-icons {
-    width: 40px !important; 
-    min-width: 40px !important;
-    max-width: 40px !important;
+    width: 60px !important; 
+    min-width: 60px !important;
+    max-width: 60px !important;
     top: 0;
     bottom: 0;
     pointer-events: none;
-    z-index: 3;
+    z-index: 3;user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .floating-icons.left {
     left: 0 !important;
@@ -443,9 +494,17 @@ body {
     padding: 6px 12px;
     top: 6px;
     z-index: 10;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .click-popup {
     font-size: 1em;
     z-index: 10;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 }
