@@ -95,6 +95,7 @@ body {
     margin-top: 24px;
     color: pink;
     font-size: 2em; 
+    text-align: center;
     z-index: 4;
 }
 
@@ -102,19 +103,8 @@ body {
     font-size: 1.4em;
     margin-bottom: 24px;
     color: white;
-    z-index: 4;
-}
-
-.counter, .bps-counter {
     text-align: center;
-    white-space: nowrap;
-    word-break: keep-all;
-    overflow-x: auto;
-    display: block;
-}
-#biscuitCount, #bpsCount {
-    white-space: nowrap;
-    display: inline-block;
+    z-index: 4;
 }
 
 .collapse-btn {
@@ -370,27 +360,16 @@ body {
     z-index: 2;
   }
   .counter {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-top: 10px;
+    text-align: center;
     z-index: 4;
   }
   .bps-counter {
-    font-size: 1.3em;
+    font-size: 0.8em;
     margin-bottom: 12px;
-    z-index: 4;
-  }
-  .counter, .bps-counter {
-    font-size: 1.1em;
     text-align: center;
-    white-space: nowrap;
-    word-break: keep-all;
-    overflow-x: auto;
-    display: block;
-  }
-  #biscuitCount, #bpsCount {
-    white-space: nowrap;
-    display: inline-block;
-    font-size: 1em;
+    z-index: 4;
   }
   .upgrade-section,
   .upgrade-list {
