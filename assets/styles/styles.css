@@ -21,6 +21,7 @@ body {
     align-items: center;   
     background-color: #44475a; /* slate grey */
     padding-bottom: 48px;
+    z-index: 1;
 }
 
 .header {
@@ -28,12 +29,14 @@ body {
     color: pink;
     margin-top: 100px;
     margin-bottom: 8px;
+    z-index: 4;
 }
 
 .paragraph {
     font-size: 1.6em;
     color: pink;
     margin-bottom: 24px;
+    z-index: 4;
 }
 
 .cat-name-text {
@@ -49,6 +52,7 @@ body {
     cursor: pointer;
     text-align: center;
     user-select: none;
+    z-index: 4;
 }
 
 .cat-name-edit {
@@ -64,6 +68,7 @@ body {
     outline: none;
     margin-bottom: 0; /* got to be a better way to keep this aligned */
     margin-top: 20px;
+    z-index: 4;
 }
 
 .main-cat {
@@ -78,30 +83,40 @@ body {
     display: block;
     transition: transform 0.12s cubic-bezier(.42,0,.58,1);
     z-index: 2;
+    -webkit-tap-highlight-color: transparent; 
+    outline: none;                            
+    user-select: none;                       
+    -webkit-user-select: none;                
+    -moz-user-select: none;                   
+    -ms-user-select: none;  
 }
 
 .counter {
     margin-top: 24px;
     color: pink;
     font-size: 2em; 
+    z-index: 4;
 }
 
 .bps-counter {
     font-size: 1.4em;
     margin-bottom: 24px;
     color: white;
+    z-index: 4;
 }
 
 .collapse-btn {
     width: 100%;
     padding: 12px;
     font-size: 1.2em;
+    color: #333;
     background: pink;
     border: none;
     cursor: pointer;
     text-align: left;
     border-radius: 8px 8px 0 0;
     margin-bottom: 10px;
+    z-index: 4;
 }
 
 .upgrade-list {
@@ -114,6 +129,7 @@ body {
     padding-bottom: 16px;
     transition: max-height 0.6s, opacity 0.6s;
     overflow: hidden;
+    z-index: 4;
 }
 
 .upgrade-list.collapsed {
@@ -204,7 +220,7 @@ body {
     bottom: 0;
     width: 200px;
     pointer-events: none;
-    z-index: 999;
+    z-index: 3;
 }
 
 .floating-icons.left {
@@ -221,6 +237,7 @@ body {
     height: 32px;
     transition: transform 0.8s cubic-bezier(.42,0,.58,1);
     will-change: transform, top, left;
+    z-index: 3;
 }
 
 .lucky-fish, .golden-fish {
@@ -241,7 +258,7 @@ body {
     padding: 12px 32px;
     font-size: 1.2em;
     font-weight: bold;
-    z-index: 3000;
+    z-index: 10;
     text-align: center;
     letter-spacing: 0.4px;
     pointer-events: none;
@@ -280,7 +297,7 @@ body {
     font-size: 1.6em;
     color: pink;
     font-weight: bold;
-    z-index: 1000;
+    z-index: 10;
     opacity: 1;
     transform: translateY(0);
     transition: transform 1.3s cubic-bezier(.42,0,.58,1), opacity 1.3s;
@@ -312,7 +329,7 @@ body {
     text-align: center;
   }
   .paragraph {
-    font-size: 1.6em;
+    font-size: 1.4em;
     margin-bottom: 12px;
     text-align: center;
   }
@@ -339,7 +356,7 @@ body {
   }
   .bps-counter {
     font-size: 1.3em;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   .upgrade-section,
   .upgrade-list {
@@ -372,7 +389,8 @@ body {
     margin-right: 6px;
   }
   .upgrade-counter {
-    font-size: 1.4em;
+    font-size: 1.2em;
+    font-weight: bold;
     padding: 6px 8px;
     min-width: 18px;
     margin-right: 2px;
@@ -389,7 +407,6 @@ body {
     max-width: 32px !important;
     top: 0;
     bottom: 0;
-    z-index: 999;
     pointer-events: none;
   }
   .floating-icons.left {
