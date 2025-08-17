@@ -540,7 +540,7 @@ function showUpgradeIcon(type, upgradeName) {
     icon.style.top = `${top}px`;
 
     // Responsive horizontal wiggle
-    let containerWidth = container.offsetWidth || 40; // Use 40px for mobile
+    let containerWidth = container.offsetWidth || 60; // Use 60px for mobile
     const iconWidth = 18; // match your CSS
     const left = Math.floor(Math.random() * (containerWidth - iconWidth));
     icon.style.left = `${left}px`;
