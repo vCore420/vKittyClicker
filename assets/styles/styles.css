@@ -360,13 +360,13 @@ body {
     z-index: 2;
   }
   .counter {
-    font-size: 1em;
+    font-size: 1.1em;
     margin-top: 10px;
     text-align: center;
     z-index: 4;
   }
   .bps-counter {
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin-bottom: 12px;
     text-align: center;
     z-index: 4;
@@ -417,9 +417,9 @@ body {
     margin-right: 4px;
   }
   .floating-icons {
-    width: 200px !important; 
-    min-width: 200px !important;
-    max-width: 200px !important;
+    width: 40px !important; 
+    min-width: 40px !important;
+    max-width: 40px !important;
     top: 0;
     bottom: 0;
     pointer-events: none;
