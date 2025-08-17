@@ -296,6 +296,14 @@ body {
     overflow-x: hidden;
   }
 
+  body {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   .header {
     font-size: 2.8em;
     margin-top: 32px;
@@ -314,8 +322,8 @@ body {
     margin-top: 8px;
   }
   .main-cat {
-    width: 120vw;
-    height: 120vw;
+    width: 90vw;
+    height: 90vw;
     max-width: 480px;
     max-height: 480px;
     min-width: 260px;
@@ -332,9 +340,9 @@ body {
   }
   .upgrade-section,
   .upgrade-list {
-    max-width: 96vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    max-width: 98vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
   .upgrade-row {
     padding: 6px;
@@ -360,7 +368,7 @@ body {
     margin-right: 8px;
   }
   .floating-icons {
-    width: 40px;
+    width: 24px; /* Make icons narrower */
     top: 0;
     bottom: 0;
   }
