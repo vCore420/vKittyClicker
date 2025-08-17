@@ -301,7 +301,7 @@ body {
     width: 100vw;
     max-width: 100vw;
     margin: 0;
-    padding: 0;
+    padding: 0 12px; 
     box-sizing: border-box;
   }
 
@@ -325,11 +325,13 @@ body {
   .main-cat {
     width: 70vw;
     height: 70vw;
-    max-width: 220px;
-    max-height: 220px;
-    min-width: 120px;
-    min-height: 120px;
+    max-width: 256px;
+    max-height: 256px;
+    min-width: 128px;
+    min-height: 128px;
     margin: 0 auto 10px auto;
+    -webkit-tap-highlight-color: transparent; 
+    outline: none;
   }
   .counter {
     font-size: 1.2em;
@@ -353,11 +355,11 @@ body {
   .upgrade-btn {
     font-size: 1em;
     padding: 6px 6px;
-    width: 65%;
+    width: 80%;
     margin-right: 6px;
   }
   .upgrade-counter {
-    font-size: 1em;
+    font-size: 1.4em;
     padding: 6px 8px;
     min-width: 18px;
     margin-right: 2px;
@@ -369,7 +371,7 @@ body {
     margin-right: 4px;
   }
   .floating-icons {
-    width: 16px;
+    width: 12px;
     top: 0;
     bottom: 0;
   }
