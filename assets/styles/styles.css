@@ -306,13 +306,13 @@ body {
   }
 
   .header {
-    font-size: 2em;
+    font-size: 2.2em;
     margin-top: 24px;
     margin-bottom: 8px;
     text-align: center;
   }
   .paragraph {
-    font-size: 1.1em;
+    font-size: 1.6em;
     margin-bottom: 12px;
     text-align: center;
   }
@@ -334,11 +334,11 @@ body {
     outline: none;
   }
   .counter {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin-top: 10px;
   }
   .bps-counter {
-    font-size: 1em;
+    font-size: 1.3em;
     margin-bottom: 8px;
   }
   .upgrade-section,
@@ -354,6 +354,8 @@ body {
     margin-bottom: 0;
     padding-left: 8px;
     padding-right: 8px;
+    font-size: 1em;
+    font-weight: bold;
     box-sizing: border-box;
     display: block;
     text-align: left;
@@ -382,15 +384,19 @@ body {
     margin-right: 4px;
   }
   .floating-icons {
-    width: 12px;
+    width: 32px !important; /* much smaller for mobile */
+    min-width: 32px !important;
+    max-width: 32px !important;
     top: 0;
     bottom: 0;
+    z-index: 999;
+    pointer-events: none;
   }
   .floating-icons.left {
-    left: 0px;
+    left: 0 !important;
   }
   .floating-icons.right {
-    right: 0px;
+    right: 0 !important;
   }
   .danger-reset-btn {
     font-size: 1em;
