@@ -438,9 +438,7 @@ body {
     margin-right: 4px;
   }
   .floating-icons {
-    width: 32px !important; /* much smaller for mobile */
-    min-width: 32px !important;
-    max-width: 32px !important;
+    width: 128px !important; /* much smaller for mobile */
     top: 0;
     bottom: 0;
     pointer-events: none;
