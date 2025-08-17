@@ -152,6 +152,7 @@ body {
     color: #333;
     margin-right: 16px;
     cursor: pointer;
+    touch-action: manipulation;
     opacity: 1;
     box-shadow: 0 2px 8px #0002;
     transition: background 0.2s, color 0.2s, opacity 0.2s;
