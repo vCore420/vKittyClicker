@@ -7,7 +7,7 @@
 
 
 // --- Save Version ---
-const SAVE_VERSION = 11.0;          // Increment this by one everytime you add or alter this game (only change them if you have to), then appoligse to everyone who just lost their save data
+const SAVE_VERSION = 11.1;          // Increment this by one everytime you add or alter this game (only change them if you have to), then appoligse to everyone who just lost their save data
 
 
 // --- Core Variables ---
