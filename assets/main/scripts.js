@@ -445,6 +445,9 @@ document.querySelectorAll('.collapse-btn').forEach(btn => {
 function formatNumber(num) {
     num = Math.floor(num); // Always use whole numbers
     const units = [
+        { value: 1e33, name: 'decillion' },
+        { value: 1e30, name: 'nonillion' },
+        { value: 1e27, name: 'octillion' },
         { value: 1e24, name: 'septillion' },
         { value: 1e21, name: 'sextillion' },
         { value: 1e18, name: 'quintillion' },
@@ -456,19 +459,19 @@ function formatNumber(num) {
     if (num < 10000) {
         return num.toString();
     }
-    if (num < 1000000) {
+    if (num < 1e6) {
         return num.toLocaleString();
     }
     for (let i = 0; i < units.length; i++) {
         if (num >= units[i].value) {
-            // Show up to 6 digits before the unit
-            const displayNum = Math.floor(num / (units[i].value / 1000));
-            return displayNum.toLocaleString() + ' ' + units[i].name;
+            let value = num / units[i].value;
+            // Show up to 3 decimals for < billion, 2 for billion and above
+            let decimals = units[i].value >= 1e9 ? 2 : 3;
+            return value.toFixed(decimals) + ' ' + units[i].name;
         }
     }
     return num.toLocaleString();
 }
-
 
 // --- User Click Popup ---
 function showClickPopup(x, y, amount) {
