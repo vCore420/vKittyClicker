@@ -456,22 +456,21 @@ function formatNumber(num) {
         { value: 1e9,  name: 'billion' },
         { value: 1e6,  name: 'million' }
     ];
-    if (num < 10000) {
-        return num.toString();
-    }
-    if (num < 1e6) {
-        return num.toLocaleString();
-    }
-    for (let i = 0; i < units.length; i++) {
-        if (num >= units[i].value) {
-            let value = num / units[i].value;
-            // Show up to 3 decimals for < billion, 2 for billion and above
-            let decimals = units[i].value >= 1e9 ? 2 : 3;
-            return value.toFixed(decimals) + ' ' + units[i].name;
-        }
-    }
-    return num.toLocaleString();
-}
+     if (num < 10000) {
+         return num.toString();
+     }
+     if (num < 1000000) {
+         return num.toLocaleString();
+     }
+     for (let i = 0; i < units.length; i++) {
+         if (num >= units[i].value) {
+         // Show up to 6 digits before the unit
+         const displayNum = Math.floor(num / (units[i].value / 1000));
+         return displayNum.toLocaleString() + ' ' + units[i].name;
+         }
+     }
+     return num.toLocaleString();
+ }
 
 // --- User Click Popup ---
 function showClickPopup(x, y, amount) {
