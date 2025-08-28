@@ -935,5 +935,5 @@ window.addEventListener('DOMContentLoaded', function() {
     reloadUpgradeIcons();
     setInterval(saveGameState, 3000); // auto save interval
     window.addEventListener('beforeunload', saveGameState); 
-    scheduleLuckyFish(true); // set to true to spawn lucky fish more often
+    scheduleLuckyFish(false); // set to true to spawn lucky fish more often
 });
