@@ -7,7 +7,7 @@
 
 
 // --- Save Version ---
-const SAVE_VERSION = 11.1;          // Increment this by one everytime you add or alter this game (only change them if you have to), then appoligse to everyone who just lost their save data
+const SAVE_VERSION = 11.2;          // Increment this by one everytime you add or alter this game (only change them if you have to), then appoligse to everyone who just lost their save data
 
 
 // --- Core Variables ---
@@ -15,6 +15,10 @@ let biscuitCount = 0;               // Initial Biscuit Count
 let clickMultiplier = 1;            // Initial Player click strength
 let autoClickMultiplier = 1;        // Initial Auto-clicker strength
 let catName = "Name your cat...";   // Initial Cat Name
+let lastCatGrowTime = 0;            // Last Cat Growth Time
+let catGrowTimeout = null;          // Cat Growth Timeout
+let lastPopupTime = 0;              // Last Popup Time
+
 
 
 // --- Sprite Variables ---
@@ -201,8 +205,11 @@ function startAutoClicker() {
         const elapsed = (now - lastTick) / 1000; // seconds since last frame
         lastTick = now;
 
-        // Add biscuits based on BPS and time passed
-        fractionalBiscuits += autoClickMultiplier * elapsed;
+        // Use dynamic BPS calculation
+        const effectiveBPS = getEffectiveBPS();
+
+        // Add biscuits based on effective BPS and time passed
+        fractionalBiscuits += effectiveBPS * elapsed;
 
         // Only whole biscuits affect game logic, but display fractions too!
         const wholeBiscuits = Math.floor(fractionalBiscuits);
@@ -218,6 +225,14 @@ function startAutoClicker() {
         requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
+}
+
+
+// --- Get Effective Biscuits Per Second ---
+function getEffectiveBPS() {
+    let baseBPS = autoUpgrades.reduce((sum, upg) => sum + (upg.bps * upg.bought), 0);
+    if (baseBPS === 0) baseBPS = 1; // Ensure minimum BPS is 1
+    return luckyFishActive ? baseBPS * luckyFishMultiplier : baseBPS;
 }
 
 
@@ -237,7 +252,7 @@ function updateBPS() {
     if (luckyFishActive) {
         displayBPS = autoClickMultiplier * luckyFishMultiplier;
     }
-    bpsSpan.textContent = formatNumber(displayBPS);
+    bpsSpan.textContent = formatNumber(getEffectiveBPS());
 }
 
 
@@ -248,9 +263,15 @@ function getCurrentBPS() {
 
 // --- Cat Click Animation ---
 function growCat() {
+    const now = Date.now();
+    if (now - lastCatGrowTime < 160) return; // Throttle: only allow every 60ms
+    lastCatGrowTime = now;
+
     mainCat.style.transform = "scale(1.2)";
-    setTimeout(() => {
+    if (catGrowTimeout) clearTimeout(catGrowTimeout);
+    catGrowTimeout = setTimeout(() => {
         mainCat.style.transform = "scale(1)";
+        catGrowTimeout = null;
     }, 120);
 }
 
@@ -474,6 +495,10 @@ function formatNumber(num) {
 
 // --- User Click Popup ---
 function showClickPopup(x, y, amount) {
+    const now = Date.now();
+    if (now - lastPopupTime < 60) return; // Throttle: only one popup every 60ms
+    lastPopupTime = now;
+
     const popup = document.createElement('div');
     popup.className = 'click-popup';
     popup.textContent = `+${formatNumber(amount)}`;
@@ -500,23 +525,28 @@ function floatIcon(icon, bodyHeight) {
     let currentTop = parseInt(icon.style.top) || 0;
 
     function moveTo(newTop) {
-        const duration = 8000 + Math.random() * 4000; // move for 6-10 seconds
+        const duration = 8000 + Math.random() * 4000;
         const startTop = currentTop;
         const delta = newTop - startTop;
         const startTime = performance.now();
 
         function animate(now) {
+            // Only animate if icon is still in the DOM
+            if (!icon.parentNode) return;
             const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            const ease = 0.5 - Math.cos(progress * Math.PI) / 2; // ease-in-out for fade
+            const ease = 0.5 - Math.cos(progress * Math.PI) / 2;
             icon.style.top = `${startTop + delta * ease}px`;
             if (progress < 1) {
                 requestAnimationFrame(animate);
             } else {
                 currentTop = newTop;
                 setTimeout(() => {
-                    moveTo(Math.floor(Math.random() * (bodyHeight - 32)));
-                }, 500); // pause before next move
+                    // Only move again if icon is still in the DOM
+                    if (icon.parentNode) {
+                        moveTo(Math.floor(Math.random() * (bodyHeight - 32)));
+                    }
+                }, 500);
             }
         }
         requestAnimationFrame(animate);
@@ -882,10 +912,12 @@ function scheduleLuckyFish(testing = false) {
 
 
 // Recalculate upgrade icons positions on window resize
+let resizeTimeout;
 window.addEventListener('resize', () => {
-    document.querySelectorAll('.upgrade-icon').forEach(icon => {
-        floatIcon(icon, window.innerHeight);
-    });
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        reloadUpgradeIcons();
+    }, 150);
 });
 
 
@@ -903,5 +935,5 @@ window.addEventListener('DOMContentLoaded', function() {
     reloadUpgradeIcons();
     setInterval(saveGameState, 3000); // auto save interval
     window.addEventListener('beforeunload', saveGameState); 
-    scheduleLuckyFish(false); // set to true to spawn lucky fish more often
+    scheduleLuckyFish(true); // set to true to spawn lucky fish more often
 });
